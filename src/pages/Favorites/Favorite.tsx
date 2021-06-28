@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import "./Favorite.scss";
 
 import { FaTimesCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaRegEye } from "react-icons/fa";
 
 interface IContactsData {
   name: string;

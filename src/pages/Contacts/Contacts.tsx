@@ -1,5 +1,6 @@
 import React, { useState, FC } from "react";
 import "./Contacts.scss";
+import { Link } from "react-router-dom";
 
 import { CardContact } from "../../components";
 
@@ -19,7 +20,7 @@ interface IContacs {
 export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
   return (
     <div className="contact">
-      <p className="title-contact">Contact</p>
+      <p className="title-contact">Contacts</p>
 
       <div className="card">
         {data.length !== 0 ? (

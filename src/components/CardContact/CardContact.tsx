@@ -4,6 +4,8 @@ import "./CardContact.scss";
 import { FaUserEdit } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface IContactsData {
   name: string;
@@ -95,6 +97,12 @@ export const CardContact: FC<IDataCard> = ({
           size={16}
           style={{ margin: "0.5rem", cursor: "pointer" }}
         />
+        <Link to={`/${index + 1}`}>
+          <FaRegEye
+            size={16}
+            style={{ margin: "0.5rem", cursor: "pointer", color: "black" }}
+          />
+        </Link>
       </div>
     </div>
   );
