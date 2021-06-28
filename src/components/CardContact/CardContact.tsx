@@ -6,6 +6,7 @@ import { FaTimesCircle } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 interface IContactsData {
   name: string;
@@ -40,6 +41,15 @@ export const CardContact: FC<IDataCard> = ({
     newData.splice(index, 1);
 
     setdata(newData);
+    toast.warn("Successfully removed!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   function addStar(index: number) {
@@ -51,6 +61,15 @@ export const CardContact: FC<IDataCard> = ({
     };
     newStarData.push(obj);
     setstar(newStarData);
+    toast.success("Successfully added!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   function edit(index: number) {
@@ -69,6 +88,15 @@ export const CardContact: FC<IDataCard> = ({
     let newData = [...data];
     newData.splice(index, 1, obj);
     setdata(newData);
+    toast.success("Edited successfully!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   return (
@@ -87,6 +115,7 @@ export const CardContact: FC<IDataCard> = ({
           size={16}
           style={{ margin: "0.5rem", cursor: "pointer" }}
         />
+        <ToastContainer style={{ fontSize: "1.5rem" }} />
         <FaUserEdit
           onClick={() => edit(index)}
           size={16}

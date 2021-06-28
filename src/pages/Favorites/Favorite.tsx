@@ -2,8 +2,7 @@ import React, { FC } from "react";
 import "./Favorite.scss";
 
 import { FaTimesCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { FaRegEye } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 interface IContactsData {
   name: string;
@@ -20,6 +19,15 @@ export const Favorite: FC<IStar> = ({ star, setstar }) => {
     let newStarData = [...star];
     newStarData.splice(index, 1);
     setstar(newStarData);
+    toast.warn("Successfully removed!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   return (
@@ -52,6 +60,7 @@ export const Favorite: FC<IStar> = ({ star, setstar }) => {
           </p>
         )}
       </div>
+      <ToastContainer style={{ fontSize: "1.5rem" }} />
     </div>
   );
 };

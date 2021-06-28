@@ -1,6 +1,7 @@
 import React, { useState, FC } from "react";
 import "./Contacts.scss";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 import { CardContact } from "../../components";
 import { FaRegPlusSquare } from "react-icons/fa";
@@ -34,6 +35,15 @@ export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
     newData.push(obj);
 
     setdata(newData);
+    toast.success("Successfully added!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   return (
@@ -69,6 +79,7 @@ export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
         size={40}
         className="addContact"
       />
+      <ToastContainer style={{ fontSize: "1.5rem" }} />
     </div>
   );
 };
