@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import "./Contacts.scss";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -19,18 +19,6 @@ interface IContacs {
 }
 
 export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
-  useEffect(() => {
-    toast.success("Welcome to React-Typescript!", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }, []);
-
   function addcontact() {
     let name = prompt("Enter your name");
     let des = prompt("Enter your description");
