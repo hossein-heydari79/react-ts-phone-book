@@ -3,6 +3,7 @@ import "./Contacts.scss";
 import { Link } from "react-router-dom";
 
 import { CardContact } from "../../components";
+import { FaRegPlusSquare } from "react-icons/fa";
 
 interface IContactsData {
   name: string;
@@ -18,6 +19,23 @@ interface IContacs {
 }
 
 export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
+  function addcontact() {
+    let name = prompt("Enter your name");
+    let des = prompt("Enter your description");
+    let profile = prompt("Enter your profile");
+
+    let obj = {
+      name: name || "",
+      des: des || "",
+      profile: profile || "",
+    };
+
+    let newData = [...data];
+    newData.push(obj);
+
+    setdata(newData);
+  }
+
   return (
     <div className="contact">
       <p className="title-contact">Contacts</p>
@@ -44,6 +62,13 @@ export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
           </p>
         )}
       </div>
+
+      <FaRegPlusSquare
+        style={{ backgroundColor: "white" }}
+        onClick={addcontact}
+        size={40}
+        className="addContact"
+      />
     </div>
   );
 };

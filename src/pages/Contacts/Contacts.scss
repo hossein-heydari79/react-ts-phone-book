@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .title-contact {
@@ -20,4 +21,10 @@
     align-items: center;
     overflow-y: auto;
     border: 1px solid gray
+}
+
+.addContact {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
 }
