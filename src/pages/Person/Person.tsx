@@ -23,7 +23,7 @@ export const Person: FC<IData> = ({ data }) => {
 
   return (
     <div className="favorite">
-      <p className="title-favorite">Favorites</p>
+      <p className="title-favorite">Person</p>
       <div className="card-p">
         <div className="p-profile">{item.profile}</div>
         <div className="p-main">
