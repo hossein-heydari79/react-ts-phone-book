@@ -1,3 +1,3 @@
-import { Index } from "./Index/Index";
+import { Contacts } from "./Contacts/Contacts";
 
-export { Index };
+export { Contacts };
