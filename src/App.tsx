@@ -7,8 +7,16 @@ import { FaUsers } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+interface IContactsData {
+  name: string;
+  des: string;
+  profile: string;
+}
+
 function App() {
   const [data, setData] = useState(ContactsData);
+
+  const [star, setStar] = useState<IContactsData[]>([]);
 
   return (
     <div className="App">
@@ -16,9 +24,19 @@ function App() {
         <Route
           path="/"
           exact
-          render={() => <Contacts data={data} setdata={setData} />}
+          render={() => (
+            <Contacts
+              star={star}
+              setstar={setStar}
+              data={data}
+              setdata={setData}
+            />
+          )}
         />
-        <Route path="/favorites" render={() => <Favorite />} />
+        <Route
+          path="/favorites"
+          render={() => <Favorite star={star} setstar={setStar} />}
+        />
       </Switch>
 
       <div className="footer">

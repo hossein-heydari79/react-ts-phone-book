@@ -12,9 +12,11 @@ interface IContactsData {
 interface IContacs {
   data: IContactsData[];
   setdata: any;
+  star: IContactsData[];
+  setstar: any;
 }
 
-export const Contacts: FC<IContacs> = ({ data, setdata }) => {
+export const Contacts: FC<IContacs> = ({ data, setdata, star, setstar }) => {
   return (
     <div className="contact">
       <p className="title-contact">Contact</p>
@@ -29,6 +31,8 @@ export const Contacts: FC<IContacs> = ({ data, setdata }) => {
               index={index}
               data={data}
               setdata={setdata}
+              star={star}
+              setstar={setstar}
             />
           ))
         ) : (

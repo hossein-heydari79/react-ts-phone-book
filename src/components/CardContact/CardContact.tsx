@@ -18,6 +18,8 @@ interface IDataCard {
   index: number;
   data: IContactsData[];
   setdata: any;
+  star: IContactsData[];
+  setstar: any;
 }
 
 export const CardContact: FC<IDataCard> = ({
@@ -27,6 +29,8 @@ export const CardContact: FC<IDataCard> = ({
   index,
   data,
   setdata,
+  star,
+  setstar,
 }) => {
   function remove(index: number) {
     let newData = [...data];
@@ -34,6 +38,17 @@ export const CardContact: FC<IDataCard> = ({
     newData.splice(index, 1);
 
     setdata(newData);
+  }
+
+  function addStar(index: number) {
+    let newStarData = [...star];
+    let obj = {
+      name: name || "",
+      des: des || "",
+      profile: profile || "",
+    };
+    newStarData.push(obj);
+    setstar(newStarData);
   }
 
   function edit(index: number) {
@@ -75,7 +90,11 @@ export const CardContact: FC<IDataCard> = ({
           size={16}
           style={{ margin: "0.5rem", cursor: "pointer" }}
         />
-        <FaRegStar size={16} style={{ margin: "0.5rem", cursor: "pointer" }} />
+        <FaRegStar
+          onClick={() => addStar(index)}
+          size={16}
+          style={{ margin: "0.5rem", cursor: "pointer" }}
+        />
       </div>
     </div>
   );
