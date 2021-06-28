@@ -1,6 +1,5 @@
-import React, { useState, FC } from "react";
+import React, { FC } from "react";
 import "./Contacts.scss";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import { CardContact } from "../../components";

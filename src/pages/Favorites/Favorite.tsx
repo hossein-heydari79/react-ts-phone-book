@@ -34,7 +34,7 @@ export const Favorite: FC<IStar> = ({ star, setstar }) => {
     <div className="favorite">
       <p className="title-favorite">Favorites</p>
       <div className="card">
-        {star.length != 0 ? (
+        {star.length !== 0 ? (
           star.map((item, index) => (
             <div className="main-favorite">
               <div className="profile-favorite">{item.profile}</div>
